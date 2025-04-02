@@ -1,0 +1,304 @@
+{% extends "admin/change_list.html" %}
+{% load static %}
+{% load admin_list %}
+{% load admin_urls %}
+
+{% block content %}
+<div id="content-main">
+    <!-- Custom Filter Section -->
+    <div class="custom-filters-section">
+        <form id="custom-filter-form" method="GET">
+            <div class="filter-container">
+                {% for field in voter_fields %}
+                <div class="filter-item">
+                    <label for="filter_{{ field.name }}">{{ field.name }}:</label>
+                    <input type="text" id="filter_{{ field.name }}" name="filter_{{ field.name }}"
+                           value="{{ request.GET.filter_field.name }}" class="filter-input">
+                </div>
+                {% endfor %}
+                <button type="submit" class="apply-filters-btn">Apply Filters</button>
+                <button type="button" class="clear-filters-btn" onclick="clearFilters()">Clear Filters</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Notification Section -->
+    <div class="notification-section">
+        <form id="notification-form" method="POST">
+            {% csrf_token %}
+            <div class="notification-container">
+                <div class="notification-item">
+                    <label for="notification_type">Notification Type:</label>
+                    <select id="notification_type" name="notification_type" onchange="updateTemplates()">
+                        <option value="">Select Type</option>
+                        {% for type in notification_types %}
+                            <option value="{{ type.id }}">{{ type.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="notification-item">
+                    <label for="notification_template">Template:</label>
+                    <select id="notification_template" name="notification_template">
+                        <option value="">Select Template</option>
+                    </select>
+                </div>
+
+                <div class="notification-item">
+                    <label for="notification_channel">Channel:</label>
+                    <select id="notification_channel" name="notification_channel">
+                        <option value="">Select Channel</option>
+                        <option value="SMS">SMS</option>
+                        <option value="WA">WhatsApp</option>
+                        <option value="BOTH">Both</option>
+                    </select>
+                </div>
+
+                <button type="button" class="send-notification-btn" onclick="sendNotifications()">
+                    Send Notification
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Original Change List Content -->
+    {% block object-tools %}
+        {{ block.super }}
+    {% endblock %}
+
+    <form id="changelist-form" method="post"{% if cl.formset and cl.formset.is_multipart %} enctype="multipart/form-data"{% endif %} novalidate>{% csrf_token %}
+        {% if cl.formset %}
+            {{ cl.formset.management_form }}
+        {% endif %}
+
+        {% block result_list %}
+            {% if action_form and actions_on_top and cl.show_admin_actions %}
+                <div class="actions">
+                    {% block admin_actions %}{% endblock %}
+                </div>
+            {% endif %}
+            {% result_list cl %}
+            {% if action_form and actions_on_bottom and cl.show_admin_actions %}
+                <div class="actions">
+                    {% block bottom_admin_actions %}{% endblock %}
+                </div>
+            {% endif %}
+        {% endblock %}
+    </form>
+</div>
+
+<style>
+    .custom-filters-section,
+    .notification-section {
+        background: #f8f8f8;
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .filter-container,
+    .notification-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        align-items: flex-end;
+    }
+
+    .filter-item,
+    .notification-item {
+        display: flex;
+        flex-direction: column;
+        min-width: 200px;
+    }
+
+    .filter-item label,
+    .notification-item label {
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #666;
+    }
+
+    .filter-input,
+    select {
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .apply-filters-btn,
+    .clear-filters-btn,
+    .send-notification-btn {
+        padding: 8px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        height: 38px;
+        margin-top: auto;
+        transition: background-color 0.3s;
+    }
+
+    .apply-filters-btn {
+        background-color: #417690;
+        color: white;
+    }
+
+    .clear-filters-btn {
+        background-color: #888;
+        color: white;
+    }
+
+    .send-notification-btn {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .apply-filters-btn:hover {
+        background-color: #2b5173;
+    }
+
+    .clear-filters-btn:hover {
+        background-color: #666;
+    }
+
+    .send-notification-btn:hover {
+        background-color: #218838;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .filter-item,
+        .notification-item {
+            min-width: 100%;
+        }
+    }
+
+    /* Loading indicator */
+    .loading {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    /* Success message */
+    .success-message {
+        background-color: #d4edda;
+        color: #155724;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        display: none;
+    }
+
+    /* Error message */
+    .error-message {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        display: none;
+    }
+</style>
+
+<script>
+function clearFilters() {
+    const inputs = document.querySelectorAll('.filter-input');
+    inputs.forEach(input => input.value = '');
+    document.getElementById('custom-filter-form').submit();
+}
+
+function updateTemplates() {
+    const typeSelect = document.getElementById('notification_type');
+    const templateSelect = document.getElementById('notification_template');
+    const selectedType = typeSelect.value;
+
+    // Clear current templates
+    templateSelect.innerHTML = '<option value="">Select Template</option>';
+
+    if (selectedType) {
+        // Add loading state
+        templateSelect.disabled = true;
+
+        // Fetch templates for selected type
+        fetch(`/admin/notifications/get-templates/${selectedType}/`)
+            .then(response => response.json())
+            .then(data => {
+                data.templates.forEach(template => {
+                    const option = new Option(template.name, template.id);
+                    templateSelect.add(option);
+                });
+            })
+            .finally(() => {
+                templateSelect.disabled = false;
+            });
+    }
+}
+
+function sendNotifications() {
+    const form = document.getElementById('notification-form');
+    const formData = new FormData(form);
+
+    // Add selected voter IDs
+    const selectedVoters = Array.from(document.querySelectorAll('input[name="_selected_action"]:checked'))
+        .map(cb => cb.value);
+    formData.append('selected_voters', JSON.stringify(selectedVoters));
+
+    if (selectedVoters.length === 0) {
+        showError('Please select at least one voter');
+        return;
+    }
+
+    if (!formData.get('notification_type') || !formData.get('notification_template') || !formData.get('notification_channel')) {
+        showError('Please select notification type, template and channel');
+        return;
+    }
+
+    // Add loading state
+    const sendButton = document.querySelector('.send-notification-btn');
+    sendButton.disabled = true;
+    sendButton.textContent = 'Sending...';
+
+    fetch('/admin/notifications/send/', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showSuccess('Notifications sent successfully!');
+        } else {
+            showError('Error sending notifications: ' + data.error);
+        }
+    })
+    .catch(error => {
+        showError('Error sending notifications: ' + error);
+    })
+    .finally(() => {
+        sendButton.disabled = false;
+        sendButton.textContent = 'Send Notification';
+    });
+}
+
+function showSuccess(message) {
+    const successDiv = document.createElement('div');
+    successDiv.className = 'success-message';
+    successDiv.textContent = message;
+    document.querySelector('.notification-section').prepend(successDiv);
+    setTimeout(() => successDiv.remove(), 3000);
+}
+
+function showError(message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = message;
+    document.querySelector('.notification-section').prepend(errorDiv);
+    setTimeout(() => errorDiv.remove(), 3000);
+}
+</script>
+{% endblock %}

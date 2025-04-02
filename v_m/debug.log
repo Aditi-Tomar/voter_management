@@ -1,0 +1,1586 @@
+INFO 2025-03-27 17:06:54,390 autoreload 19092 14856 Watching for file changes with StatReloader
+WARNING 2025-03-27 17:06:57,146 log 19092 9424 Not Found: /
+WARNING 2025-03-27 17:06:57,147 basehttp 19092 9424 "GET / HTTP/1.1" 404 2305
+INFO 2025-03-27 17:07:00,532 basehttp 19092 7336 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-27 17:07:01,122 basehttp 19092 7336 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4168
+INFO 2025-03-27 17:07:01,156 basehttp 19092 7336 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-03-27 17:07:01,157 basehttp 19092 9304 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-03-27 17:07:01,158 basehttp 19092 2692 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-03-27 17:07:01,163 basehttp 19092 2692 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-03-27 17:07:01,167 basehttp 19092 9304 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-03-27 17:07:01,174 basehttp 19092 9304 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-03-27 17:07:01,310 basehttp 19092 2692 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-03-27 17:07:06,481 basehttp 19092 2692 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-03-27 17:07:06,614 basehttp 19092 2692 "GET /admin/ HTTP/1.1" 200 6721
+INFO 2025-03-27 17:07:06,644 basehttp 19092 2692 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-03-27 17:07:06,657 basehttp 19092 2692 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-03-27 17:07:06,657 basehttp 19092 9304 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+ERROR 2025-03-27 17:07:11,864 log 19092 6328 Internal Server Error: /admin/voters/voter/
+Traceback (most recent call last):
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'admin_list_filter'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\voter_management\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "G:\voter_management\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "G:\voter_management\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 563, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 16: 'admin_list_filter', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+ERROR 2025-03-27 17:07:11,885 basehttp 19092 6328 "GET /admin/voters/voter/ HTTP/1.1" 500 252041
+INFO 2025-03-27 17:24:55,687 basehttp 19092 8384 "GET /admin/ HTTP/1.1" 200 6721
+INFO 2025-03-27 17:28:21,919 autoreload 19092 14856 G:\voter_management\voters\models.py changed, reloading.
+INFO 2025-03-27 17:28:28,667 autoreload 19992 15084 Watching for file changes with StatReloader
+INFO 2025-03-27 17:28:37,330 autoreload 19992 15084 G:\voter_management\voters\admin.py changed, reloading.
+INFO 2025-03-27 17:28:38,126 autoreload 10160 17936 Watching for file changes with StatReloader
+INFO 2025-03-27 17:29:05,149 autoreload 10160 17936 G:\voter_management\core\settings.py changed, reloading.
+INFO 2025-03-27 17:29:05,900 autoreload 5600 4608 Watching for file changes with StatReloader
+INFO 2025-03-27 17:29:16,409 autoreload 5600 4608 G:\voter_management\core\settings.py changed, reloading.
+INFO 2025-03-27 17:29:17,272 autoreload 15676 13160 Watching for file changes with StatReloader
+INFO 2025-03-27 17:33:40,722 autoreload 16616 11308 Watching for file changes with StatReloader
+WARNING 2025-03-27 17:33:43,743 log 16616 12368 Not Found: /
+WARNING 2025-03-27 17:33:43,744 basehttp 16616 12368 "GET / HTTP/1.1" 404 2305
+INFO 2025-03-27 17:33:54,510 basehttp 16616 12368 "GET /admin/ HTTP/1.1" 200 9165
+ERROR 2025-03-27 17:33:58,286 log 16616 12368 Internal Server Error: /admin/voters/voter/
+Traceback (most recent call last):
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'admin_list_filter'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\voter_management\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "G:\voter_management\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "G:\voter_management\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 563, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 16: 'admin_list_filter', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+ERROR 2025-03-27 17:33:58,301 basehttp 16616 12368 "GET /admin/voters/voter/ HTTP/1.1" 500 252147
+INFO 2025-03-27 17:34:03,672 basehttp 16616 12368 "GET /admin/voters/voter/add/ HTTP/1.1" 200 10471
+INFO 2025-03-27 17:34:03,701 basehttp 16616 12368 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-03-27 17:34:03,712 basehttp 16616 18276 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-03-27 17:34:03,712 basehttp 16616 15084 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-03-27 17:34:03,717 basehttp 16616 13332 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-03-27 17:34:03,720 basehttp 16616 21156 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-03-27 17:34:03,720 basehttp 16616 18404 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-03-27 17:34:03,720 basehttp 16616 18276 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-03-27 17:34:03,721 basehttp 16616 13332 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-03-27 17:34:03,722 basehttp 16616 15084 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-03-27 17:34:03,725 basehttp 16616 21156 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-03-27 17:34:03,726 basehttp 16616 18404 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-03-27 17:34:03,733 basehttp 16616 18404 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-03-27 17:34:03,934 basehttp 16616 12368 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-03-27 17:34:24,317 log 16616 12368 Internal Server Error: /admin/voters/voter/
+Traceback (most recent call last):
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'admin_list_filter'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\voter_management\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "G:\voter_management\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "G:\voter_management\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 563, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 16: 'admin_list_filter', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+ERROR 2025-03-27 17:34:24,325 basehttp 16616 12368 "GET /admin/voters/voter/ HTTP/1.1" 500 252147
+ERROR 2025-03-27 17:36:17,609 log 16616 1616 Internal Server Error: /admin/voters/voter/
+Traceback (most recent call last):
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'admin_list_filter'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\voter_management\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "G:\voter_management\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "G:\voter_management\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "G:\voter_management\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "G:\voter_management\venv\Lib\site-packages\django\template\base.py", line 563, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 16: 'admin_list_filter', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+ERROR 2025-03-27 17:36:17,622 basehttp 16616 1616 "GET /admin/voters/voter/ HTTP/1.1" 500 252147
+INFO 2025-03-27 17:39:30,334 autoreload 16616 11308 G:\voter_management\core\settings.py changed, reloading.
+INFO 2025-03-27 17:39:31,167 autoreload 12952 21388 Watching for file changes with StatReloader
+INFO 2025-03-27 17:40:05,461 autoreload 12952 21388 G:\voter_management\voters\admin.py changed, reloading.
+INFO 2025-03-27 17:40:06,275 autoreload 6336 2940 Watching for file changes with StatReloader
+INFO 2025-03-27 17:40:20,016 autoreload 6336 2940 G:\voter_management\voters\models.py changed, reloading.
+INFO 2025-03-27 17:40:20,818 autoreload 20140 19948 Watching for file changes with StatReloader
+INFO 2025-03-27 17:42:40,426 autoreload 9568 15464 Watching for file changes with StatReloader
+WARNING 2025-03-27 17:42:52,370 log 9568 16472 Not Found: /
+WARNING 2025-03-27 17:42:52,371 basehttp 9568 16472 "GET / HTTP/1.1" 404 2305
+INFO 2025-03-27 17:42:56,418 basehttp 9568 16472 "GET /admin HTTP/1.1" 301 0
+INFO 2025-03-27 17:42:56,453 basehttp 9568 16184 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-27 17:42:56,999 basehttp 9568 16184 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4168
+INFO 2025-03-27 17:42:57,218 basehttp 9568 6472 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-03-27 17:42:57,313 basehttp 9568 14548 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+INFO 2025-03-27 17:42:57,422 basehttp 9568 17876 "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+INFO 2025-03-27 17:42:57,539 basehttp 9568 21124 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-03-27 17:42:57,578 basehttp 9568 16184 "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+INFO 2025-03-27 17:42:57,811 basehttp 9568 7752 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-03-27 17:42:57,811 basehttp 9568 16184 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-03-27 17:43:05,449 basehttp 9568 16184 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-03-27 17:43:05,556 basehttp 9568 16184 "GET /admin/ HTTP/1.1" 200 9165
+INFO 2025-03-27 17:43:05,606 basehttp 9568 16184 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-03-27 17:43:05,693 basehttp 9568 16184 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-03-27 17:43:05,696 basehttp 9568 7752 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-03-27 17:43:08,595 basehttp 9568 7752 "GET /admin/voters/voter/ HTTP/1.1" 200 104706
+INFO 2025-03-27 17:43:08,639 basehttp 9568 17876 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-03-27 17:43:08,719 basehttp 9568 7752 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-03-27 17:43:08,986 basehttp 9568 7752 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-03-27 17:43:09,004 basehttp 9568 16184 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 17:43:09,109 basehttp 9568 7752 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-03-27 17:43:09,118 basehttp 9568 17876 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-03-27 17:43:09,470 basehttp 9568 14548 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-03-27 17:43:09,474 basehttp 9568 6472 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+INFO 2025-03-27 17:43:09,486 basehttp 9568 6472 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-03-27 17:43:09,811 basehttp 9568 16184 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-03-27 17:43:09,830 basehttp 9568 16184 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-03-27 17:43:09,885 basehttp 9568 21124 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-03-27 17:43:09,941 basehttp 9568 21124 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-03-27 17:43:09,950 basehttp 9568 6472 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-03-27 17:43:10,046 basehttp 9568 16184 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-03-27 17:49:23,316 basehttp 9568 204 - Broken pipe from ('127.0.0.1', 59106)
+INFO 2025-03-27 17:49:23,338 basehttp 9568 18680 "GET /admin/notifications/notificationtype/ HTTP/1.1" 200 21234
+INFO 2025-03-27 17:49:23,401 basehttp 9568 18680 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 17:49:23,444 basehttp 9568 8944 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+WARNING 2025-03-27 17:49:23,771 log 9568 18976 Not Found: /notifications/api/templates/
+WARNING 2025-03-27 17:49:23,772 basehttp 9568 18976 "GET /notifications/api/templates/ HTTP/1.1" 404 2407
+INFO 2025-03-27 17:49:23,849 basehttp 9568 8944 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-03-27 17:49:23,861 basehttp 9568 18680 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+WARNING 2025-03-27 17:49:24,677 log 9568 18680 Not Found: /notifications/api/stats/
+WARNING 2025-03-27 17:49:24,678 basehttp 9568 18680 "GET /notifications/api/stats/ HTTP/1.1" 404 2395
+INFO 2025-03-27 17:49:24,715 basehttp 9568 18976 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+WARNING 2025-03-27 17:49:24,738 log 9568 8944 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-03-27 17:49:24,739 basehttp 9568 8944 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 2425
+INFO 2025-03-27 17:49:28,800 basehttp 9568 8944 "GET /admin/notifications/sentnotification/ HTTP/1.1" 200 21559
+INFO 2025-03-27 17:49:28,837 basehttp 9568 8944 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-03-27 17:49:28,969 log 9568 18976 Not Found: /notifications/api/stats/
+WARNING 2025-03-27 17:49:28,971 basehttp 9568 18976 "GET /notifications/api/stats/ HTTP/1.1" 404 2395
+WARNING 2025-03-27 17:49:28,999 log 9568 18680 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-03-27 17:49:29,000 basehttp 9568 18680 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 2425
+WARNING 2025-03-27 17:49:29,022 log 9568 8944 Not Found: /notifications/api/templates/
+WARNING 2025-03-27 17:49:29,023 basehttp 9568 8944 "GET /notifications/api/templates/ HTTP/1.1" 404 2407
+INFO 2025-03-27 17:49:31,237 basehttp 9568 8944 "GET /admin/notifications/notificationtemplate/ HTTP/1.1" 200 21262
+INFO 2025-03-27 17:49:31,287 basehttp 9568 8944 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-03-27 17:49:31,343 log 9568 8944 Not Found: /notifications/api/templates/
+WARNING 2025-03-27 17:49:31,344 basehttp 9568 8944 "GET /notifications/api/templates/ HTTP/1.1" 404 2407
+WARNING 2025-03-27 17:49:31,365 log 9568 18680 Not Found: /notifications/api/stats/
+WARNING 2025-03-27 17:49:31,365 basehttp 9568 18680 "GET /notifications/api/stats/ HTTP/1.1" 404 2395
+WARNING 2025-03-27 17:49:31,388 log 9568 18976 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-03-27 17:49:31,389 basehttp 9568 18976 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 2425
+INFO 2025-03-27 17:49:34,615 basehttp 9568 18976 "GET /admin/auth/user/ HTTP/1.1" 200 13546
+INFO 2025-03-27 17:49:34,654 basehttp 9568 18976 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 17:49:34,741 basehttp 9568 18680 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-03-27 17:49:37,733 basehttp 9568 18680 "GET /admin/notifications/notificationtype/ HTTP/1.1" 200 21234
+INFO 2025-03-27 17:49:37,763 basehttp 9568 18680 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-03-27 17:49:37,815 log 9568 18680 Not Found: /notifications/api/templates/
+WARNING 2025-03-27 17:49:37,822 basehttp 9568 18680 "GET /notifications/api/templates/ HTTP/1.1" 404 2407
+WARNING 2025-03-27 17:49:37,843 log 9568 18976 Not Found: /notifications/api/stats/
+WARNING 2025-03-27 17:49:37,844 basehttp 9568 18976 "GET /notifications/api/stats/ HTTP/1.1" 404 2395
+WARNING 2025-03-27 17:49:37,913 log 9568 8944 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-03-27 17:49:37,914 basehttp 9568 8944 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 2425
+INFO 2025-03-27 17:49:40,667 basehttp 9568 8944 "GET /admin/notifications/notificationtemplate/ HTTP/1.1" 200 21262
+INFO 2025-03-27 17:49:40,751 basehttp 9568 8944 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-03-27 17:49:40,824 log 9568 18680 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-03-27 17:49:40,825 basehttp 9568 18680 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 2425
+WARNING 2025-03-27 17:49:40,832 log 9568 18976 Not Found: /notifications/api/stats/
+WARNING 2025-03-27 17:49:40,833 basehttp 9568 18976 "GET /notifications/api/stats/ HTTP/1.1" 404 2395
+WARNING 2025-03-27 17:49:40,850 log 9568 8944 Not Found: /notifications/api/templates/
+WARNING 2025-03-27 17:49:40,852 basehttp 9568 8944 "GET /notifications/api/templates/ HTTP/1.1" 404 2407
+INFO 2025-03-27 17:49:42,337 basehttp 9568 8944 "GET /admin/notifications/sentnotification/ HTTP/1.1" 200 21559
+INFO 2025-03-27 17:49:42,376 basehttp 9568 8944 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-03-27 17:49:42,430 log 9568 8944 Not Found: /notifications/api/templates/
+WARNING 2025-03-27 17:49:42,435 basehttp 9568 8944 "GET /notifications/api/templates/ HTTP/1.1" 404 2407
+WARNING 2025-03-27 17:49:42,449 log 9568 18976 Not Found: /notifications/api/stats/
+WARNING 2025-03-27 17:49:42,449 basehttp 9568 18976 "GET /notifications/api/stats/ HTTP/1.1" 404 2395
+WARNING 2025-03-27 17:49:42,498 log 9568 18680 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-03-27 17:49:42,499 basehttp 9568 18680 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 2425
+INFO 2025-03-27 17:49:44,479 basehttp 9568 18680 "GET /admin/voters/voter/ HTTP/1.1" 200 104706
+INFO 2025-03-27 17:49:44,548 basehttp 9568 18680 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 17:50:06,384 basehttp 9568 18680 "GET /admin/notifications/notificationtemplate/ HTTP/1.1" 200 21262
+INFO 2025-03-27 17:50:06,481 basehttp 9568 18680 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-03-27 17:50:06,548 log 9568 18680 Not Found: /notifications/api/templates/
+WARNING 2025-03-27 17:50:06,552 basehttp 9568 18680 "GET /notifications/api/templates/ HTTP/1.1" 404 2407
+WARNING 2025-03-27 17:50:06,580 log 9568 18976 Not Found: /notifications/api/stats/
+WARNING 2025-03-27 17:50:06,580 basehttp 9568 18976 "GET /notifications/api/stats/ HTTP/1.1" 404 2395
+WARNING 2025-03-27 17:50:06,587 log 9568 8944 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-03-27 17:50:06,588 basehttp 9568 8944 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 2425
+INFO 2025-03-27 17:50:13,393 basehttp 9568 8944 "GET /admin/notifications/notificationtype/ HTTP/1.1" 200 21234
+INFO 2025-03-27 17:50:13,446 basehttp 9568 8944 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-03-27 17:50:13,519 log 9568 8944 Not Found: /notifications/api/templates/
+WARNING 2025-03-27 17:50:13,524 basehttp 9568 8944 "GET /notifications/api/templates/ HTTP/1.1" 404 2407
+WARNING 2025-03-27 17:50:13,535 log 9568 18976 Not Found: /notifications/api/stats/
+WARNING 2025-03-27 17:50:13,536 basehttp 9568 18976 "GET /notifications/api/stats/ HTTP/1.1" 404 2395
+WARNING 2025-03-27 17:50:13,557 log 9568 18680 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-03-27 17:50:13,558 basehttp 9568 18680 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 2425
+INFO 2025-03-27 17:50:23,526 basehttp 9568 18680 "GET /admin/notifications/sentnotification/ HTTP/1.1" 200 21559
+INFO 2025-03-27 17:50:23,556 basehttp 9568 18680 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-03-27 17:50:23,682 log 9568 18680 Not Found: /notifications/api/templates/
+WARNING 2025-03-27 17:50:23,683 basehttp 9568 18680 "GET /notifications/api/templates/ HTTP/1.1" 404 2407
+WARNING 2025-03-27 17:50:23,750 log 9568 18976 Not Found: /notifications/api/stats/
+WARNING 2025-03-27 17:50:23,751 basehttp 9568 18976 "GET /notifications/api/stats/ HTTP/1.1" 404 2395
+WARNING 2025-03-27 17:50:23,781 log 9568 8944 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-03-27 17:50:23,782 basehttp 9568 8944 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 2425
+INFO 2025-03-27 17:50:33,073 basehttp 9568 8944 "GET /admin/voters/voter/add/ HTTP/1.1" 200 10471
+INFO 2025-03-27 17:50:33,109 basehttp 9568 18976 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-03-27 17:50:33,110 basehttp 9568 18680 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 17:50:33,146 basehttp 9568 8944 "GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+INFO 2025-03-27 17:50:33,165 basehttp 9568 18680 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-03-27 17:50:35,306 basehttp 9568 18680 "GET /admin/voters/voter/ HTTP/1.1" 200 104706
+INFO 2025-03-27 17:50:35,377 basehttp 9568 18680 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-01 16:55:44,311 autoreload 4960 11316 Watching for file changes with StatReloader
+WARNING 2025-04-01 16:55:46,984 base 4960 3052 Session data corrupted
+WARNING 2025-04-01 16:55:47,029 log 4960 3052 Not Found: /
+WARNING 2025-04-01 16:55:47,032 basehttp 4960 3052 "GET / HTTP/1.1" 404 2305
+INFO 2025-04-01 16:55:50,738 basehttp 4960 3052 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-04-01 16:55:50,836 basehttp 4960 3052 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4168
+INFO 2025-04-01 16:55:50,966 basehttp 4960 3052 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-04-01 16:56:03,509 basehttp 4960 3052 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-04-01 16:56:03,561 basehttp 4960 3052 "GET /admin/ HTTP/1.1" 200 9165
+ERROR 2025-04-01 16:56:10,862 log 4960 3052 Internal Server Error: /admin/voters/voter/
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.ProgrammingError: (1146, "Table 'voter_management.voters' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\contrib\admin\options.py", line 718, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\contrib\admin\sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\contrib\admin\options.py", line 1999, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\contrib\admin\options.py", line 866, in get_changelist_instance
+    return ChangeList(
+        request,
+    ...<12 lines>...
+        self.search_help_text,
+    )
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\contrib\admin\views\main.py", line 146, in __init__
+    self.get_results(request)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\contrib\admin\views\main.py", line 313, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\core\paginator.py", line 110, in count
+    return c()
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\models\query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\models\sql\query.py", line 630, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\models\sql\query.py", line 616, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: (1146, "Table 'voter_management.voters' doesn't exist")
+ERROR 2025-04-01 16:56:10,915 basehttp 4960 3052 "GET /admin/voters/voter/ HTTP/1.1" 500 221502
+INFO 2025-04-01 16:57:57,218 autoreload 4960 11316 C:\Users\lenovo\Downloads\voter_management\voters\models.py changed, reloading.
+INFO 2025-04-01 16:57:59,747 autoreload 17140 5656 Watching for file changes with StatReloader
+INFO 2025-04-01 16:58:29,452 autoreload 17140 5656 C:\Users\lenovo\Downloads\voter_management\voters\migrations\0001_initial.py changed, reloading.
+INFO 2025-04-01 16:58:30,497 autoreload 18988 6344 Watching for file changes with StatReloader
+INFO 2025-04-01 16:59:22,329 autoreload 18988 6344 C:\Users\lenovo\Downloads\voter_management\voters\apps.py changed, reloading.
+INFO 2025-04-01 16:59:23,374 autoreload 4268 9868 Watching for file changes with StatReloader
+INFO 2025-04-01 17:12:38,354 autoreload 4812 3272 Watching for file changes with StatReloader
+WARNING 2025-04-01 17:13:41,361 log 4812 18644 Not Found: /
+WARNING 2025-04-01 17:13:41,363 basehttp 4812 18644 "GET / HTTP/1.1" 404 2305
+INFO 2025-04-01 17:13:52,708 basehttp 4812 18644 "GET /admin/ HTTP/1.1" 200 9787
+INFO 2025-04-01 17:13:56,995 basehttp 4812 18644 "GET /admin/voters/voter/ HTTP/1.1" 200 164451
+INFO 2025-04-01 17:13:57,100 basehttp 4812 18644 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-01 17:13:57,269 basehttp 4812 18644 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-04-01 17:14:06,114 basehttp 4812 18644 "GET /admin/voters/voterfield/ HTTP/1.1" 200 21026
+INFO 2025-04-01 17:14:06,168 basehttp 4812 18644 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-01 17:14:12,670 basehttp 4812 18644 "GET /admin/voters/voter/ HTTP/1.1" 200 164451
+INFO 2025-04-01 17:14:12,740 basehttp 4812 18644 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-01 17:14:49,375 basehttp 4812 18644 "GET /admin/notifications/sentnotification/ HTTP/1.1" 200 22002
+INFO 2025-04-01 17:14:49,422 basehttp 4812 18644 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-04-01 17:14:49,515 log 4812 18644 Not Found: /notifications/api/templates/
+WARNING 2025-04-01 17:14:49,517 basehttp 4812 18644 "GET /notifications/api/templates/ HTTP/1.1" 404 2407
+WARNING 2025-04-01 17:14:49,575 log 4812 18644 Not Found: /notifications/api/stats/
+WARNING 2025-04-01 17:14:49,576 basehttp 4812 18644 "GET /notifications/api/stats/ HTTP/1.1" 404 2395
+WARNING 2025-04-01 17:14:49,583 log 4812 16908 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-04-01 17:14:49,586 basehttp 4812 16908 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 2425
+INFO 2025-04-01 17:14:51,414 basehttp 4812 16908 "GET /admin/notifications/notificationtype/ HTTP/1.1" 200 21677
+INFO 2025-04-01 17:14:51,481 basehttp 4812 16908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-04-01 17:14:51,556 log 4812 16908 Not Found: /notifications/api/templates/
+WARNING 2025-04-01 17:14:51,565 basehttp 4812 16908 "GET /notifications/api/templates/ HTTP/1.1" 404 2407
+WARNING 2025-04-01 17:14:51,580 log 4812 18644 Not Found: /notifications/api/stats/
+WARNING 2025-04-01 17:14:51,581 basehttp 4812 18644 "GET /notifications/api/stats/ HTTP/1.1" 404 2395
+WARNING 2025-04-01 17:14:51,594 log 4812 8556 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-04-01 17:14:51,594 basehttp 4812 8556 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 2425
+ERROR 2025-04-01 17:14:53,853 log 4812 8556 Internal Server Error: /admin/notifications/notificationtemplate/
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1054, "Unknown column 'notifications_notificationtemplate.notification_type_id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\contrib\admin\options.py", line 718, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\contrib\admin\sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\contrib\admin\options.py", line 2138, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+                                                           ~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.OperationalError: (1054, "Unknown column 'notifications_notificationtemplate.notification_type_id' in 'field list'")
+ERROR 2025-04-01 17:14:53,907 basehttp 4812 8556 "GET /admin/notifications/notificationtemplate/ HTTP/1.1" 500 205816
+INFO 2025-04-01 17:14:56,288 basehttp 4812 8556 "GET /admin/notifications/notificationtype/ HTTP/1.1" 200 21677
+INFO 2025-04-01 17:15:02,930 basehttp 4812 8556 "GET /admin/voters/voter/ HTTP/1.1" 200 164451
+INFO 2025-04-01 17:15:02,976 basehttp 4812 8556 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-01 17:35:05,798 autoreload 15084 20020 Watching for file changes with StatReloader
+WARNING 2025-04-01 17:35:07,440 log 15084 21260 Not Found: /
+WARNING 2025-04-01 17:35:07,442 basehttp 15084 21260 "GET / HTTP/1.1" 404 2305
+INFO 2025-04-01 17:35:10,944 basehttp 15084 21260 "GET /admin/ HTTP/1.1" 200 9787
+INFO 2025-04-01 17:35:14,549 basehttp 15084 21260 "GET /admin/voters/voter/ HTTP/1.1" 200 164451
+INFO 2025-04-01 17:35:14,673 basehttp 15084 21260 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-01 17:35:14,723 basehttp 15084 21260 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-04-01 17:35:28,149 basehttp 15084 21260 "GET /admin/voters/voterfield/ HTTP/1.1" 200 21026
+INFO 2025-04-01 17:35:28,212 basehttp 15084 21260 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-01 17:35:39,752 basehttp 15084 21260 "GET /admin/voters/voter/ HTTP/1.1" 200 164451
+INFO 2025-04-01 17:35:39,838 basehttp 15084 21260 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-01 17:42:41,494 autoreload 15084 20020 C:\Users\lenovo\Downloads\voter_management\voters\admin.py changed, reloading.
+INFO 2025-04-01 17:42:42,846 autoreload 14428 15484 Watching for file changes with StatReloader
+INFO 2025-04-01 17:45:18,943 autoreload 7148 17344 Watching for file changes with StatReloader
+INFO 2025-04-01 17:46:40,252 autoreload 7148 17344 C:\Users\lenovo\Downloads\voter_management\voters\admin.py changed, reloading.
+INFO 2025-04-01 17:46:41,591 autoreload 22096 12224 Watching for file changes with StatReloader
+INFO 2025-04-01 17:47:08,741 autoreload 22096 12224 C:\Users\lenovo\Downloads\voter_management\voters\models.py changed, reloading.
+INFO 2025-04-01 17:47:09,966 autoreload 720 22372 Watching for file changes with StatReloader
+WARNING 2025-04-01 17:47:11,786 log 720 11484 Not Found: /
+WARNING 2025-04-01 17:47:11,788 basehttp 720 11484 "GET / HTTP/1.1" 404 2305
+INFO 2025-04-01 17:47:16,201 basehttp 720 11484 "GET /admin/ HTTP/1.1" 200 9787
+ERROR 2025-04-01 17:47:19,297 log 720 11484 Internal Server Error: /admin/voters/voter/
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'admin_actions'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\response.py", line 74, in resolve_template
+    return get_template(template, using=self.using)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 563, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 68: 'admin_actions', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2025-04-01 17:47:19,346 basehttp 720 11484 "GET /admin/voters/voter/ HTTP/1.1" 500 203283
+INFO 2025-04-01 17:49:49,030 autoreload 720 22372 C:\Users\lenovo\Downloads\voter_management\core\urls.py changed, reloading.
+INFO 2025-04-01 17:49:50,223 autoreload 9140 17928 Watching for file changes with StatReloader
+INFO 2025-04-01 17:51:56,979 autoreload 9140 17928 C:\Users\lenovo\Downloads\voter_management\notifications\models.py changed, reloading.
+INFO 2025-04-01 17:51:58,895 autoreload 18464 13468 Watching for file changes with StatReloader
+INFO 2025-04-01 17:52:13,114 autoreload 18464 13468 C:\Users\lenovo\Downloads\voter_management\notifications\admin.py changed, reloading.
+INFO 2025-04-01 17:52:14,171 autoreload 18820 13716 Watching for file changes with StatReloader
+INFO 2025-04-01 17:55:59,095 autoreload 5552 1856 Watching for file changes with StatReloader
+WARNING 2025-04-01 17:56:00,806 log 5552 7896 Not Found: /
+WARNING 2025-04-01 17:56:00,807 basehttp 5552 7896 "GET / HTTP/1.1" 404 2462
+INFO 2025-04-01 17:56:04,364 basehttp 5552 7896 "GET /admin/ HTTP/1.1" 200 9772
+ERROR 2025-04-01 17:56:07,920 log 5552 7896 Internal Server Error: /admin/voters/voter/
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.ProgrammingError: (1146, "Table 'voter_management.notification_types' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\template\defaulttags.py", line 199, in render
+    len_values = len(values)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\lenovo\Downloads\voter_management\venv\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: (1146, "Table 'voter_management.notification_types' doesn't exist")
+ERROR 2025-04-01 17:56:07,973 basehttp 5552 7896 "GET /admin/voters/voter/ HTTP/1.1" 500 291269
+INFO 2025-04-01 18:05:03,597 autoreload 7336 13884 Watching for file changes with StatReloader
+WARNING 2025-04-01 18:05:05,242 log 7336 9724 Not Found: /
+WARNING 2025-04-01 18:05:05,245 basehttp 7336 9724 "GET / HTTP/1.1" 404 2462
+INFO 2025-04-01 18:05:10,360 basehttp 7336 9724 "GET /admin/ HTTP/1.1" 200 9772
+INFO 2025-04-01 18:05:13,810 basehttp 7336 9724 "GET /admin/voters/voter/ HTTP/1.1" 200 99967
+INFO 2025-04-01 18:05:13,890 basehttp 7336 9724 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-01 18:05:13,945 basehttp 7336 9724 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-04-01 18:06:21,825 basehttp 7336 9724 "GET /admin/voters/voter/?filter_AGE=&filter_ASSEMBLY=&filter_CARD+NO=&filter_CASTE=&filter_CATEGORY=&filter_GENDER=M&filter_HNO=&filter_LOCATION=&filter_MANDAL=&filter_MLC+CONSTITUNCY=&filter_MOBILE+NO=&filter_PARTY=&filter_PS+ADDRESS=&filter_PSNO=&filter_REL+NAME=&filter_RELATION=&filter_SNO=&filter_STREET=&filter_TOWN=&filter_VERIFY+STATUS=&filter_VILLAGE=&filter_VOTER+NAME=&filter_VOTER+STATUS= HTTP/1.1" 302 0
+INFO 2025-04-01 18:06:22,116 basehttp 7336 9724 "GET /admin/voters/voter/?e=1 HTTP/1.1" 200 101293
+INFO 2025-04-01 18:06:22,194 basehttp 7336 9724 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-01 18:06:25,439 basehttp 7336 9724 "GET /admin/voters/voter/?filter_AGE=&filter_ASSEMBLY=&filter_CARD+NO=&filter_CASTE=&filter_CATEGORY=&filter_GENDER=&filter_HNO=&filter_LOCATION=&filter_MANDAL=&filter_MLC+CONSTITUNCY=&filter_MOBILE+NO=&filter_PARTY=&filter_PS+ADDRESS=&filter_PSNO=&filter_REL+NAME=&filter_RELATION=&filter_SNO=&filter_STREET=&filter_TOWN=&filter_VERIFY+STATUS=&filter_VILLAGE=&filter_VOTER+NAME=&filter_VOTER+STATUS= HTTP/1.1" 302 0
+INFO 2025-04-01 18:06:25,729 basehttp 7336 9724 "GET /admin/voters/voter/?e=1 HTTP/1.1" 200 101293
+INFO 2025-04-01 18:06:25,796 basehttp 7336 9724 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-01 18:06:31,020 basehttp 7336 9724 "GET /admin/notifications/notificationtype/ HTTP/1.1" 200 16516
+INFO 2025-04-01 18:06:31,086 basehttp 7336 9724 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-04-01 18:06:31,156 log 7336 9724 Not Found: /notifications/api/templates/
+WARNING 2025-04-01 18:06:31,157 basehttp 7336 9724 "GET /notifications/api/templates/ HTTP/1.1" 404 2993
+WARNING 2025-04-01 18:06:31,224 log 7336 9724 Not Found: /notifications/api/stats/
+WARNING 2025-04-01 18:06:31,226 basehttp 7336 9724 "GET /notifications/api/stats/ HTTP/1.1" 404 2981
+WARNING 2025-04-01 18:06:31,232 log 7336 15956 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-04-01 18:06:31,234 basehttp 7336 15956 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 3011
+INFO 2025-04-01 18:06:36,065 basehttp 7336 15956 "GET /admin/notifications/notificationtemplate/ HTTP/1.1" 200 16544
+INFO 2025-04-01 18:06:36,133 basehttp 7336 15956 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-04-01 18:06:36,234 log 7336 15956 Not Found: /notifications/api/templates/
+WARNING 2025-04-01 18:06:36,242 basehttp 7336 15956 "GET /notifications/api/templates/ HTTP/1.1" 404 2993
+WARNING 2025-04-01 18:06:36,265 log 7336 9724 Not Found: /notifications/api/stats/
+WARNING 2025-04-01 18:06:36,266 basehttp 7336 9724 "GET /notifications/api/stats/ HTTP/1.1" 404 2981
+WARNING 2025-04-01 18:06:36,278 log 7336 1556 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-04-01 18:06:36,279 basehttp 7336 1556 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 3011
+INFO 2025-04-01 18:06:37,825 basehttp 7336 1556 "GET /admin/notifications/notificationlog/ HTTP/1.1" 200 26898
+INFO 2025-04-01 18:06:37,909 basehttp 7336 1556 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-04-01 18:06:38,006 log 7336 1556 Not Found: /notifications/api/templates/
+WARNING 2025-04-01 18:06:38,047 basehttp 7336 1556 "GET /notifications/api/templates/ HTTP/1.1" 404 2993
+WARNING 2025-04-01 18:06:38,063 log 7336 9724 Not Found: /notifications/api/stats/
+WARNING 2025-04-01 18:06:38,066 basehttp 7336 9724 "GET /notifications/api/stats/ HTTP/1.1" 404 2981
+WARNING 2025-04-01 18:06:38,079 log 7336 15956 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-04-01 18:06:38,080 basehttp 7336 15956 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 3011
+INFO 2025-04-01 18:06:43,724 basehttp 7336 15956 "GET /admin/voters/voter/ HTTP/1.1" 200 99967
+INFO 2025-04-01 18:06:43,804 basehttp 7336 15956 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-01 18:06:51,559 basehttp 7336 15956 "GET /admin/voters/voterfield/ HTTP/1.1" 200 21013
+INFO 2025-04-01 18:06:51,644 basehttp 7336 15956 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-01 18:06:55,219 basehttp 7336 15956 "GET /admin/voters/voter/ HTTP/1.1" 200 99967
+INFO 2025-04-01 18:06:55,304 basehttp 7336 15956 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-01 18:15:08,811 basehttp 7336 9056 "GET /admin/notifications/notificationlog/ HTTP/1.1" 200 26898
+INFO 2025-04-01 18:15:08,858 basehttp 7336 9056 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-04-01 18:15:08,926 log 7336 9056 Not Found: /notifications/api/templates/
+WARNING 2025-04-01 18:15:08,928 basehttp 7336 9056 "GET /notifications/api/templates/ HTTP/1.1" 404 2993
+WARNING 2025-04-01 18:15:08,974 log 7336 20736 Not Found: /notifications/api/stats/
+WARNING 2025-04-01 18:15:08,975 basehttp 7336 20736 "GET /notifications/api/stats/ HTTP/1.1" 404 2981
+WARNING 2025-04-01 18:15:08,978 log 7336 7248 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-04-01 18:15:08,978 basehttp 7336 7248 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 3011
+WARNING 2025-04-01 18:15:39,029 log 7336 7248 Not Found: /notifications/api/stats/
+WARNING 2025-04-01 18:15:39,031 basehttp 7336 7248 "GET /notifications/api/stats/ HTTP/1.1" 404 2981
+INFO 2025-04-01 18:15:41,147 basehttp 7336 7248 "GET /admin/voters/voter/ HTTP/1.1" 200 99967
+INFO 2025-04-01 18:15:41,190 basehttp 7336 7248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:15:59,213 autoreload 93447 8276297792 Watching for file changes with StatReloader
+INFO 2025-04-02 05:16:27,914 autoreload 94144 8276297792 Watching for file changes with StatReloader
+WARNING 2025-04-02 05:16:30,790 log 94144 6124138496 Not Found: /
+WARNING 2025-04-02 05:16:30,791 basehttp 94144 6124138496 "GET / HTTP/1.1" 404 2462
+INFO 2025-04-02 05:16:35,481 basehttp 94144 6124138496 "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-04-02 05:16:35,551 basehttp 94144 6124138496 "GET /admin/ HTTP/1.1" 200 10154
+INFO 2025-04-02 05:16:35,585 basehttp 94144 6157791232 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-04-02 05:16:35,585 basehttp 94144 6140964864 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+INFO 2025-04-02 05:16:35,586 basehttp 94144 6124138496 "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+INFO 2025-04-02 05:16:35,595 basehttp 94144 6140964864 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-04-02 05:16:35,597 basehttp 94144 6124138496 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-04-02 05:16:35,598 basehttp 94144 6157791232 "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+INFO 2025-04-02 05:16:35,599 basehttp 94144 6124138496 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-04-02 05:16:35,609 basehttp 94144 6124138496 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-04-02 05:16:35,609 basehttp 94144 6157791232 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+ERROR 2025-04-02 05:16:38,299 log 94144 6124138496 Internal Server Error: /admin/notifications/notificationtype/
+Traceback (most recent call last):
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'voter_management.notification_types' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 718, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1999, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 866, in get_changelist_instance
+    return ChangeList(
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/contrib/admin/views/main.py", line 146, in __init__
+    self.get_results(request)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/contrib/admin/views/main.py", line 313, in get_results
+    result_count = paginator.count
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/core/paginator.py", line 110, in count
+    return c()
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/models/query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 630, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 616, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'voter_management.notification_types' doesn't exist")
+ERROR 2025-04-02 05:16:38,307 basehttp 94144 6124138496 "GET /admin/notifications/notificationtype/ HTTP/1.1" 500 214984
+ERROR 2025-04-02 05:16:41,063 log 94144 6124138496 Internal Server Error: /admin/voters/voter/
+Traceback (most recent call last):
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'voter_management.voter_fields' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 199, in render
+    len_values = len(values)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'voter_management.voter_fields' doesn't exist")
+ERROR 2025-04-02 05:16:41,071 basehttp 94144 6124138496 "GET /admin/voters/voter/ HTTP/1.1" 500 301440
+INFO 2025-04-02 05:17:40,956 autoreload 95765 8276297792 Watching for file changes with StatReloader
+WARNING 2025-04-02 05:17:43,882 log 95765 6157152256 Not Found: /
+WARNING 2025-04-02 05:17:43,883 basehttp 95765 6157152256 "GET / HTTP/1.1" 404 2462
+INFO 2025-04-02 05:17:47,117 basehttp 95765 6157152256 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-04-02 05:17:57,432 basehttp 95765 6157152256 "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-04-02 05:17:57,458 basehttp 95765 6157152256 "GET /admin/ HTTP/1.1" 200 10154
+INFO 2025-04-02 05:17:57,466 basehttp 95765 6157152256 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:17:57,468 basehttp 95765 6173978624 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:17:57,470 basehttp 95765 6190804992 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:17:57,482 basehttp 95765 6190804992 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:17:57,482 basehttp 95765 6157152256 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:17:57,482 basehttp 95765 6173978624 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:17:57,484 basehttp 95765 6173978624 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:17:57,488 basehttp 95765 6173978624 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+ERROR 2025-04-02 05:17:59,430 log 95765 6157152256 Internal Server Error: /admin/voters/voter/
+Traceback (most recent call last):
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'voter_management.voter_fields' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 199, in render
+    len_values = len(values)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/Users/adititomar/PycharmProjects/voter_management/venv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'voter_management.voter_fields' doesn't exist")
+ERROR 2025-04-02 05:17:59,437 basehttp 95765 6157152256 "GET /admin/voters/voter/ HTTP/1.1" 500 301440
+INFO 2025-04-02 05:33:43,747 autoreload 15978 8276297792 Watching for file changes with StatReloader
+WARNING 2025-04-02 05:33:45,703 log 15978 6169784320 Not Found: /
+WARNING 2025-04-02 05:33:45,703 basehttp 15978 6169784320 "GET / HTTP/1.1" 404 2462
+INFO 2025-04-02 05:33:51,957 basehttp 15978 6169784320 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4161
+INFO 2025-04-02 05:33:51,970 basehttp 15978 6186610688 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:33:51,971 basehttp 15978 6169784320 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:33:51,972 basehttp 15978 6203437056 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:33:51,983 basehttp 15978 6203437056 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:33:51,984 basehttp 15978 6169784320 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:33:51,985 basehttp 15978 6169784320 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:33:51,987 basehttp 15978 6186610688 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-04-02 05:33:57,021 basehttp 15978 6169784320 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4322
+INFO 2025-04-02 05:34:56,894 basehttp 15978 6169784320 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-04-02 05:34:56,921 basehttp 15978 6169784320 "GET /admin/ HTTP/1.1" 200 9770
+INFO 2025-04-02 05:34:56,942 basehttp 15978 6169784320 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:34:56,966 basehttp 15978 6169784320 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-04-02 05:34:56,966 basehttp 15978 6186610688 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-04-02 05:34:59,940 basehttp 15978 6169784320 "GET /admin/voters/voter/ HTTP/1.1" 200 17647
+INFO 2025-04-02 05:34:59,982 basehttp 15978 6186610688 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-04-02 05:34:59,984 basehttp 15978 6237089792 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-04-02 05:34:59,984 basehttp 15978 6253916160 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-04-02 05:34:59,986 basehttp 15978 6220263424 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-04-02 05:34:59,987 basehttp 15978 6203437056 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-04-02 05:34:59,988 basehttp 15978 6169784320 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:34:59,999 basehttp 15978 6253916160 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-04-02 05:35:00,000 basehttp 15978 6186610688 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+INFO 2025-04-02 05:35:00,000 basehttp 15978 6237089792 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-04-02 05:35:00,002 basehttp 15978 6220263424 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-04-02 05:35:00,006 basehttp 15978 6237089792 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-04-02 05:35:00,028 basehttp 15978 6220263424 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-04-02 05:35:02,570 basehttp 15978 6169784320 "GET /admin/voters/voterfield/ HTTP/1.1" 200 10435
+INFO 2025-04-02 05:35:02,595 basehttp 15978 6186610688 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-04-02 05:35:02,599 basehttp 15978 6169784320 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:35:04,101 basehttp 15978 6169784320 "GET /admin/voters/voter/ HTTP/1.1" 200 17647
+INFO 2025-04-02 05:35:04,128 basehttp 15978 6169784320 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:35:48,830 basehttp 15978 6169784320 "GET /admin/voters/voter/ HTTP/1.1" 200 17647
+INFO 2025-04-02 05:35:48,879 basehttp 15978 6203437056 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:35:48,880 basehttp 15978 6186610688 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:35:48,881 basehttp 15978 6220263424 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:35:48,881 basehttp 15978 6237089792 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:35:48,890 basehttp 15978 6237089792 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:35:48,896 basehttp 15978 6169784320 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:35:48,896 basehttp 15978 6237089792 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:35:50,877 basehttp 15978 6237089792 "GET /admin/notifications/notificationtype/ HTTP/1.1" 200 16514
+INFO 2025-04-02 05:35:50,905 basehttp 15978 6237089792 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-04-02 05:35:50,960 log 15978 6237089792 Not Found: /notifications/api/templates/
+WARNING 2025-04-02 05:35:50,960 basehttp 15978 6237089792 "GET /notifications/api/templates/ HTTP/1.1" 404 2993
+WARNING 2025-04-02 05:35:50,986 log 15978 6237089792 Not Found: /notifications/api/stats/
+WARNING 2025-04-02 05:35:50,987 basehttp 15978 6237089792 "GET /notifications/api/stats/ HTTP/1.1" 404 2981
+WARNING 2025-04-02 05:35:50,990 log 15978 6169784320 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-04-02 05:35:50,991 basehttp 15978 6169784320 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 3011
+WARNING 2025-04-02 05:36:20,990 log 15978 6169784320 Not Found: /notifications/api/stats/
+WARNING 2025-04-02 05:36:20,991 basehttp 15978 6169784320 "GET /notifications/api/stats/ HTTP/1.1" 404 2981
+WARNING 2025-04-02 05:36:50,991 log 15978 6169784320 Not Found: /notifications/api/stats/
+WARNING 2025-04-02 05:36:50,992 basehttp 15978 6169784320 "GET /notifications/api/stats/ HTTP/1.1" 404 2981
+WARNING 2025-04-02 05:37:20,993 log 15978 6169784320 Not Found: /notifications/api/stats/
+WARNING 2025-04-02 05:37:20,994 basehttp 15978 6169784320 "GET /notifications/api/stats/ HTTP/1.1" 404 2981
+WARNING 2025-04-02 05:37:50,989 log 15978 6169784320 Not Found: /notifications/api/stats/
+WARNING 2025-04-02 05:37:50,990 basehttp 15978 6169784320 "GET /notifications/api/stats/ HTTP/1.1" 404 2981
+INFO 2025-04-02 05:38:19,611 basehttp 15978 6169784320 "GET /admin/notifications/notificationtype/ HTTP/1.1" 200 16514
+INFO 2025-04-02 05:38:19,672 basehttp 15978 6203437056 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,674 basehttp 15978 6186610688 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,679 basehttp 15978 6203437056 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,680 basehttp 15978 6220263424 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,681 basehttp 15978 6186610688 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,682 basehttp 15978 6237089792 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,682 basehttp 15978 6253916160 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,682 basehttp 15978 6220263424 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,684 basehttp 15978 6203437056 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,684 basehttp 15978 6237089792 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,685 basehttp 15978 6186610688 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,685 basehttp 15978 6220263424 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,685 basehttp 15978 6253916160 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,686 basehttp 15978 6203437056 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,686 basehttp 15978 6253916160 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,686 basehttp 15978 6169784320 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:38:19,688 basehttp 15978 6169784320 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:38:19,689 basehttp 15978 6253916160 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+WARNING 2025-04-02 05:38:19,738 log 15978 6253916160 Not Found: /notifications/api/templates/
+WARNING 2025-04-02 05:38:19,738 basehttp 15978 6253916160 "GET /notifications/api/templates/ HTTP/1.1" 404 2993
+WARNING 2025-04-02 05:38:19,740 log 15978 6203437056 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-04-02 05:38:19,740 basehttp 15978 6203437056 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 3011
+WARNING 2025-04-02 05:38:19,741 log 15978 6169784320 Not Found: /notifications/api/stats/
+WARNING 2025-04-02 05:38:19,741 basehttp 15978 6169784320 "GET /notifications/api/stats/ HTTP/1.1" 404 2981
+INFO 2025-04-02 05:38:20,325 basehttp 15978 6169784320 "GET /admin/notifications/notificationtemplate/ HTTP/1.1" 200 16542
+INFO 2025-04-02 05:38:20,357 basehttp 15978 6169784320 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-04-02 05:38:20,433 log 15978 6253916160 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-04-02 05:38:20,433 basehttp 15978 6253916160 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 3011
+WARNING 2025-04-02 05:38:20,434 log 15978 6169784320 Not Found: /notifications/api/templates/
+WARNING 2025-04-02 05:38:20,434 basehttp 15978 6169784320 "GET /notifications/api/templates/ HTTP/1.1" 404 2993
+WARNING 2025-04-02 05:38:20,435 log 15978 6203437056 Not Found: /notifications/api/stats/
+WARNING 2025-04-02 05:38:20,435 basehttp 15978 6203437056 "GET /notifications/api/stats/ HTTP/1.1" 404 2981
+INFO 2025-04-02 05:38:21,139 basehttp 15978 6203437056 "GET /admin/notifications/notificationlog/ HTTP/1.1" 200 25469
+INFO 2025-04-02 05:38:21,180 basehttp 15978 6203437056 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:38:21,181 basehttp 15978 6169784320 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+INFO 2025-04-02 05:38:21,200 basehttp 15978 6169784320 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-04-02 05:38:21,268 basehttp 15978 6169784320 "GET /static/admin/js/calendar.js?_=1743572301187 HTTP/1.1" 200 9141
+INFO 2025-04-02 05:38:21,269 basehttp 15978 6203437056 "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1743572301188 HTTP/1.1" 200 19319
+WARNING 2025-04-02 05:38:21,277 log 15978 6186610688 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-04-02 05:38:21,277 basehttp 15978 6186610688 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 3011
+WARNING 2025-04-02 05:38:21,278 log 15978 6253916160 Not Found: /notifications/api/templates/
+WARNING 2025-04-02 05:38:21,279 basehttp 15978 6253916160 "GET /notifications/api/templates/ HTTP/1.1" 404 2993
+WARNING 2025-04-02 05:38:21,279 log 15978 6220263424 Not Found: /notifications/api/stats/
+WARNING 2025-04-02 05:38:21,279 basehttp 15978 6220263424 "GET /notifications/api/stats/ HTTP/1.1" 404 2981
+INFO 2025-04-02 05:38:21,294 basehttp 15978 6220263424 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-04-02 05:38:22,412 basehttp 15978 6169784320 "GET /admin/voters/voter/ HTTP/1.1" 200 17647
+INFO 2025-04-02 05:38:22,443 basehttp 15978 6169784320 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:38:24,118 basehttp 15978 6169784320 "GET /admin/voters/voterfield/ HTTP/1.1" 200 10435
+INFO 2025-04-02 05:38:24,144 basehttp 15978 6169784320 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:38:25,193 basehttp 15978 6169784320 "GET /admin/voters/voter/ HTTP/1.1" 200 17647
+INFO 2025-04-02 05:38:25,214 basehttp 15978 6169784320 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:42:53,645 autoreload 27711 8276297792 Watching for file changes with StatReloader
+INFO 2025-04-02 05:42:59,621 autoreload 27825 8276297792 Watching for file changes with StatReloader
+WARNING 2025-04-02 05:43:01,190 log 27825 6159069184 Not Found: /
+WARNING 2025-04-02 05:43:01,190 basehttp 27825 6159069184 "GET / HTTP/1.1" 404 2462
+INFO 2025-04-02 05:43:07,264 basehttp 27825 6159069184 "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-04-02 05:43:07,298 basehttp 27825 6159069184 "GET /admin/ HTTP/1.1" 200 9770
+INFO 2025-04-02 05:43:07,311 basehttp 27825 6159069184 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:07,313 basehttp 27825 6175895552 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:07,314 basehttp 27825 6192721920 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:07,327 basehttp 27825 6175895552 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:07,327 basehttp 27825 6192721920 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:07,328 basehttp 27825 6159069184 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:07,329 basehttp 27825 6159069184 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:07,334 basehttp 27825 6192721920 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:07,334 basehttp 27825 6159069184 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:08,738 basehttp 27825 6192721920 "GET /admin/voters/voter/ HTTP/1.1" 200 17647
+INFO 2025-04-02 05:43:08,768 basehttp 27825 6175895552 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:08,770 basehttp 27825 6159069184 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:08,771 basehttp 27825 6209548288 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:08,773 basehttp 27825 6226374656 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:08,775 basehttp 27825 6243201024 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:08,775 basehttp 27825 6175895552 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:08,776 basehttp 27825 6209548288 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:08,777 basehttp 27825 6226374656 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:08,779 basehttp 27825 6159069184 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:08,784 basehttp 27825 6192721920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:43:08,797 basehttp 27825 6192721920 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:08,811 basehttp 27825 6192721920 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:10,382 basehttp 27825 6192721920 "GET /admin/voters/voterfield/ HTTP/1.1" 200 10435
+INFO 2025-04-02 05:43:10,405 basehttp 27825 6159069184 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-04-02 05:43:10,413 basehttp 27825 6192721920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:43:10,962 basehttp 27825 6192721920 "GET /admin/voters/voter/ HTTP/1.1" 200 17647
+INFO 2025-04-02 05:43:10,987 basehttp 27825 6192721920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:43:12,201 basehttp 27825 6192721920 "GET /admin/voters/voter/ HTTP/1.1" 200 17647
+INFO 2025-04-02 05:43:12,221 basehttp 27825 6192721920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:44:30,485 basehttp 27825 6159069184 "GET /admin/voters/voter/ HTTP/1.1" 200 17647
+INFO 2025-04-02 05:44:30,501 basehttp 27825 6159069184 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:44:31,053 basehttp 27825 6159069184 "GET /admin/voters/voterfield/ HTTP/1.1" 200 10435
+INFO 2025-04-02 05:44:31,096 basehttp 27825 6159069184 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 05:44:31,721 basehttp 27825 6159069184 "GET /admin/voters/voter/ HTTP/1.1" 200 17647
+INFO 2025-04-02 05:44:31,753 basehttp 27825 6159069184 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 06:19:57,444 autoreload 73773 8276297792 Watching for file changes with StatReloader
+WARNING 2025-04-02 06:19:59,249 log 73773 6124777472 Not Found: /
+WARNING 2025-04-02 06:19:59,250 basehttp 73773 6124777472 "GET / HTTP/1.1" 404 2462
+INFO 2025-04-02 06:20:04,002 basehttp 73773 6124777472 "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-04-02 06:20:04,027 basehttp 73773 6124777472 "GET /admin/ HTTP/1.1" 200 9770
+INFO 2025-04-02 06:20:04,039 basehttp 73773 6124777472 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:04,040 basehttp 73773 6141603840 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:04,040 basehttp 73773 6158430208 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:04,052 basehttp 73773 6141603840 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:04,053 basehttp 73773 6158430208 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:04,054 basehttp 73773 6124777472 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:04,055 basehttp 73773 6124777472 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:04,061 basehttp 73773 6124777472 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:04,061 basehttp 73773 6158430208 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:09,783 basehttp 73773 6124777472 "GET /admin/voters/voter/ HTTP/1.1" 200 100065
+INFO 2025-04-02 06:20:09,828 basehttp 73773 6175256576 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:09,830 basehttp 73773 6158430208 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:09,831 basehttp 73773 6141603840 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:09,834 basehttp 73773 6141603840 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:09,835 basehttp 73773 6192082944 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:09,836 basehttp 73773 6175256576 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:09,837 basehttp 73773 6175256576 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:09,837 basehttp 73773 6158430208 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:09,838 basehttp 73773 6208909312 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:09,849 basehttp 73773 6124777472 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 06:20:09,866 basehttp 73773 6124777472 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:09,887 basehttp 73773 6124777472 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:09,893 basehttp 73773 6208909312 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-04-02 06:20:21,509 basehttp 73773 6124777472 "GET /admin/voters/voterfield/ HTTP/1.1" 200 21011
+INFO 2025-04-02 06:20:21,539 basehttp 73773 6141603840 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-04-02 06:20:21,539 basehttp 73773 6158430208 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-04-02 06:20:21,548 basehttp 73773 6124777472 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 06:20:23,753 basehttp 73773 6124777472 "GET /admin/notifications/notificationtype/ HTTP/1.1" 200 16514
+INFO 2025-04-02 06:20:23,782 basehttp 73773 6124777472 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-04-02 06:20:23,825 log 73773 6124777472 Not Found: /notifications/api/templates/
+WARNING 2025-04-02 06:20:23,826 basehttp 73773 6124777472 "GET /notifications/api/templates/ HTTP/1.1" 404 2993
+WARNING 2025-04-02 06:20:23,851 log 73773 6124777472 Not Found: /notifications/api/stats/
+WARNING 2025-04-02 06:20:23,851 basehttp 73773 6124777472 "GET /notifications/api/stats/ HTTP/1.1" 404 2981
+WARNING 2025-04-02 06:20:23,853 log 73773 6158430208 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-04-02 06:20:23,853 basehttp 73773 6158430208 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 3011
+INFO 2025-04-02 06:20:24,487 basehttp 73773 6124777472 "GET /admin/notifications/notificationtemplate/ HTTP/1.1" 200 16542
+INFO 2025-04-02 06:20:24,521 basehttp 73773 6124777472 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-04-02 06:20:24,580 log 73773 6124777472 Not Found: /notifications/api/templates/
+WARNING 2025-04-02 06:20:24,580 basehttp 73773 6124777472 "GET /notifications/api/templates/ HTTP/1.1" 404 2993
+WARNING 2025-04-02 06:20:24,581 log 73773 6141603840 Not Found: /notifications/api/stats/
+WARNING 2025-04-02 06:20:24,581 basehttp 73773 6141603840 "GET /notifications/api/stats/ HTTP/1.1" 404 2981
+WARNING 2025-04-02 06:20:24,584 log 73773 6158430208 Not Found: /notifications/api/chart-data/week/
+WARNING 2025-04-02 06:20:24,584 basehttp 73773 6158430208 "GET /notifications/api/chart-data/week/ HTTP/1.1" 404 3011
+INFO 2025-04-02 06:20:25,521 basehttp 73773 6158430208 "GET /admin/voters/voter/ HTTP/1.1" 200 100065
+INFO 2025-04-02 06:20:25,547 basehttp 73773 6158430208 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
