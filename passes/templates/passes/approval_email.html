@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p>Dear {{ temple_pass.name }},</p>
+    
+    <p>We are pleased to inform you that your temple pass request has been approved!</p>
+    
+    <p>Details:</p>
+    <ul>
+        <li>Temple: {{ temple_pass.get_temple_display }}</li>
+        <li>Date: {{ temple_pass.visit_date }}</li>
+        <li>Number of Persons: {{ temple_pass.persons }}</li>
+    </ul>
+    
+    <p>Please find your temple pass attached to this email.</p>
+    
+    <p>Best regards,<br>Temple Administration</p>
+</body>
+</html>

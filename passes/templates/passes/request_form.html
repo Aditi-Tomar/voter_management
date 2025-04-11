@@ -1,0 +1,197 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+    .button {
+        padding: 5px 10px;
+        margin: 2px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    .button-accept {
+        background-color: #28a745;
+        color: white;
+    }
+    .button-reject {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .form-container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Temple Pass Request Form</h2>
+
+    <div id="message" class="alert" style="display: none;"></div>
+
+    <form id="passRequestForm" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" class="form-control" id="phone" name="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="temple">Temple</label>
+            <select class="form-control" id="temple" name="temple" required>
+                <option value="">Select Temple</option>
+                {% for value, label in temple_choices %}
+                <option value="{{ value }}">{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="persons">Number of Persons</label>
+            <select class="form-control" id="persons" name="persons" required>
+                {% for i in "123456" %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="visit_date">Visit Date</label>
+            <input type="date" class="form-control" id="visit_date" name="visit_date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="id_proof">ID Proof (Aadhar, Passport, etc.)</label>
+            <input type="text" class="form-control" id="id_proof" name="id_proof" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Request</button>
+    </form>
+</div>
+
+<script>
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+function updateStatus(requestId, status) {
+    if (!confirm(`Are you sure you want to ${status.toLowerCase()} this request?`)) {
+        return;
+    }
+
+    const csrftoken = getCookie('csrftoken');
+
+    fetch(`/api/passes/${requestId}/update-status/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrftoken
+        },
+        body: JSON.stringify({ status: status })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message) {
+            alert(`Request ${status.toLowerCase()} successfully`);
+            location.reload();
+        } else {
+            alert('Error updating status');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error updating status');
+    });
+}
+
+document.getElementById('passRequestForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
+
+    fetch('/api/passes/submit/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken')
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        const messageDiv = document.getElementById('message');
+        messageDiv.style.display = 'block';
+
+        if (data.message) {
+            messageDiv.className = 'alert alert-success';
+            messageDiv.textContent = data.message;
+            this.reset();
+        } else {
+            messageDiv.className = 'alert alert-danger';
+            messageDiv.textContent = 'Error submitting form. Please try again.';
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        const messageDiv = document.getElementById('message');
+        messageDiv.style.display = 'block';
+        messageDiv.className = 'alert alert-danger';
+        messageDiv.textContent = 'Error submitting form. Please try again.';
+    });
+});
+
+// Set minimum date to today
+document.addEventListener('DOMContentLoaded', function() {
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('visit_date').min = today;
+});
+</script>
+{% endblock %}

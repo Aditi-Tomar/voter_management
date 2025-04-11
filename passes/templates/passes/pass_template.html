@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .pass-container {
+            border: 2px solid #000;
+            padding: 20px;
+            margin: 20px;
+        }
+        .header {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .details {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="pass-container">
+        <div class="header">
+            Temple Visit Pass
+        </div>
+
+        <div class="details">
+            <p><strong>Pass ID:</strong> {{ temple_pass.id }}</p>
+            <p><strong>Name:</strong> {{ pass_request.name }}</p>
+            <p><strong>Temple:</strong> {{ pass_request.get_temple_display }}</p>
+            <p><strong>Visit Date:</strong> {{ pass_request.visit_date }}</p>
+            <p><strong>Number of Persons:</strong> {{ pass_request.persons }}</p>
+            <p><strong>ID Proof:</strong> {{ pass_request.id_proof }}</p>
+        </div>
+
+        <div style="margin-top: 40px; text-align: right;">
+            <p>Authorized Signature</p>
+            <p>Temple Administration</p>
+        </div>
+    </div>
+</body>
+</html>
