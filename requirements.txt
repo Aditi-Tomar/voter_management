@@ -1,4 +1,4 @@
-Django>=5.2
+Django
 djangorestframework
 mysqlclient
 django-widget-tweaks
