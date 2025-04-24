@@ -6,4 +6,5 @@ pandas
 python-decouple
 django-admin-rangefilter
 openpyxl
+pymysql
 gunicorn>=20.0.0
