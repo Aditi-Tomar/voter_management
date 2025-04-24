@@ -60,3 +60,4 @@ weasyprint
 webencodings
 xhtml2pdf
 zopfli
+pymysql
