@@ -131,6 +131,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # used in production (colle
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # used in development
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files
 MEDIA_URL = config('MEDIA_URL', default='/media/')
