@@ -2373,3 +2373,6 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'download_letter' with keywor
 2025-04-25 16:00:50,641 [INFO] Watching for file changes with StatReloader
 2025-04-25 16:09:10,479 [INFO] D:\sites\2023\voter_management\core\settings.py changed, reloading.
 2025-04-25 16:09:12,940 [INFO] Watching for file changes with StatReloader
+2025-04-25 16:26:37,308 [INFO] Watching for file changes with StatReloader
+2025-04-25 16:31:38,454 [INFO] D:\sites\2023\voter_management\core\settings.py changed, reloading.
+2025-04-25 16:31:41,269 [INFO] Watching for file changes with StatReloader
