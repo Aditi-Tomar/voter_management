@@ -123,11 +123,12 @@ TIME_ZONE = config('TIME_ZONE', default='UTC')
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = config('STATIC_URL', default='static/')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+
+STATIC_URL = config('STATIC_URL', default='/static/')  # make sure the default has leading/trailing slashes
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # used in production (collectstatic)
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static'),  # used in development
 ]
 
 # Media files
