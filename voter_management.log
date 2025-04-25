@@ -2356,3 +2356,20 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'download_letter' with keywor
 2025-04-23 05:32:16,589 [INFO] PDF generated successfully at /var/folders/jt/k32c15px2yn959l2m1t318bc0000gn/T/tmpsf0vrqrt.pdf
 2025-04-23 05:32:16,591 [INFO] Attempting to send email to adititomar201098@gmail.com
 2025-04-23 05:32:21,944 [INFO] Email sent successfully to adititomar201098@gmail.com
+2025-04-25 15:36:14,608 [INFO] Watching for file changes with StatReloader
+2025-04-25 15:37:09,829 [INFO] D:\sites\2023\voter_management\core\settings.py changed, reloading.
+2025-04-25 15:37:45,228 [INFO] Watching for file changes with StatReloader
+2025-04-25 15:46:00,606 [INFO] Watching for file changes with StatReloader
+2025-04-25 15:48:01,747 [INFO] Watching for file changes with StatReloader
+2025-04-25 15:48:13,700 [WARNING] Not Found: /
+2025-04-25 15:48:23,460 [WARNING] Not Found: /favicon.ico
+2025-04-25 15:54:53,876 [INFO] D:\sites\2023\voter_management\core\settings.py changed, reloading.
+2025-04-25 15:54:56,761 [INFO] Watching for file changes with StatReloader
+2025-04-25 15:55:13,647 [INFO] D:\sites\2023\voter_management\core\settings.py changed, reloading.
+2025-04-25 15:55:16,185 [INFO] Watching for file changes with StatReloader
+2025-04-25 15:55:28,867 [INFO] D:\sites\2023\voter_management\core\settings.py changed, reloading.
+2025-04-25 15:55:31,679 [INFO] Watching for file changes with StatReloader
+2025-04-25 16:00:48,236 [INFO] D:\sites\2023\voter_management\core\settings.py changed, reloading.
+2025-04-25 16:00:50,641 [INFO] Watching for file changes with StatReloader
+2025-04-25 16:09:10,479 [INFO] D:\sites\2023\voter_management\core\settings.py changed, reloading.
+2025-04-25 16:09:12,940 [INFO] Watching for file changes with StatReloader

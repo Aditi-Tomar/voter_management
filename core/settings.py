@@ -86,10 +86,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': config('DB_NAME', default='voter_management'),
-        'USER': config('DB_USER', default='voter_admin'),
-        'PASSWORD': config('DB_PASSWORD', default='Voter@1234'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='3306'),
+        'USER': config('DB_USER', default='root'),
+        'PASSWORD': config('DB_PASSWORD', default='SnZswatLDJguUmULWpYcGFssUZlPnkJW'),
+        'HOST': config('DB_HOST', default='caboose.proxy.rlwy.net'),
+        'PORT': config('DB_PORT', default='27465'),
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         },
