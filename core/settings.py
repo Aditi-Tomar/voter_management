@@ -86,8 +86,8 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('DB_NAME', default='voter_management'),
-        'USER': config('DB_USER', default='root'),
+        'NAME': config('DB_NAME', default='targesbe_mpsahab'),
+        'USER': config('DB_USER', default='targesbe_mpsaab'),
         'PASSWORD': config('DB_PASSWORD', default='SnZswatLDJguUmULWpYcGFssUZlPnkJW'),
         'HOST': config('DB_HOST', default='caboose.proxy.rlwy.net'),
         'PORT': config('DB_PORT', default='27465'),
