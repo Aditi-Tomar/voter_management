@@ -1,0 +1,27 @@
+<h1>{{ event.title }}</h1>
+<img src="{{ event.featured_image.url }}">
+<p>{{ event.description }}</p>
+<p><strong>Date:</strong> {{ event.event_date }}</p>
+<p><strong>Location:</strong> {{ event.location_name }} - {{ event.address }}</p>
+<iframe src="{{ event.map_embed_url }}" width="100%" height="250"></iframe>
+
+<form method="post" action="{% url 'event-rsvp' event.id %}">
+  {% csrf_token %}
+  <input type="text" name="name" placeholder="Your Name">
+  <input type="email" name="email" placeholder="Your Email">
+  <input type="text" name="phone" placeholder="Phone">
+  <button type="submit">RSVP</button>
+</form>
+
+{% load static %}
+
+<!DOCTYPE html> <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ event.title }}</title>
+  <style> body { font-family: Arial, sans-serif; } .event-container { max-width: 900px; margin: auto; } img { max-width: 100%; margin-bottom: 20px; } iframe { width: 100%; height: 450px; border: 0; margin-top: 20px; } </style>
+</head>
+<body>
+<div class="event-container"> <h1>{{ event.title }}</h1> <p><strong>Date:</strong> {{ event.event_date }}</p> <p><strong>Location:</strong> {{ event.location_name }}</p> <img src="{{ event.featured_image.url }}" alt="{{ event.title }} image"> <p><strong>Description:</strong></p><div>{{ event.description|safe }}</div> <p><strong>Address:</strong> {{ event.address }}</p> {% if event.map_embed_url %} <iframe src="{{ event.map_embed_url }}" allowfullscreen loading="lazy"></iframe> {% endif %} </div>
+</body>
+</html>

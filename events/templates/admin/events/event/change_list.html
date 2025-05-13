@@ -1,0 +1,58 @@
+{% extends "admin/change_list.html" %}
+{% load admin_list static %}
+
+{% block content_title %}
+<div class="filters-bar">
+    <form method="get">
+        <label for="is_featured">Featured:</label>
+        <select name="is_featured">
+            <option value="">All</option>
+            <option value="1" {% if request.GET.is_featured == "1" %}selected{% endif %}>Yes</option>
+            <option value="0" {% if request.GET.is_featured == "0" %}selected{% endif %}>No</option>
+        </select>
+
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<div class="object-tools">
+<form method="get" class="form-inline" style="margin-bottom: 20px;">
+<label for="is_published">Published:</label>
+<select name="is_published">
+<option value="">All</option>
+<option value="1" {% if request.GET.is_published == "1" %}selected{% endif %}>Yes</option>
+<option value="0" {% if request.GET.is_published == "0" %}selected{% endif %}>No</option>
+</select>
+
+            <label for="is_featured">Featured:</label>
+        <select name="is_featured">
+            <option value="">All</option>
+            <option value="1" {% if request.GET.is_featured == "1" %}selected{% endif %}>Yes</option>
+            <option value="0" {% if request.GET.is_featured == "0" %}selected{% endif %}>No</option>
+        </select>
+
+        <label for="is_archived">Archived:</label>
+        <select name="is_archived">
+            <option value="">All</option>
+            <option value="1" {% if request.GET.is_archived == "1" %}selected{% endif %}>Yes</option>
+            <option value="0" {% if request.GET.is_archived == "0" %}selected{% endif %}>No</option>
+        </select>
+
+        <label for="category__id__exact">Category:</label>
+        <select name="category__id__exact">
+            <option value="">All</option>
+            {% for category in cl.queryset.model.objects.values_list('category__id', 'category__name').distinct %}
+                {% if category.0 %}
+                    <option value="{{ category.0 }}" {% if request.GET.category__id__exact == category.0|stringformat:"s" %}selected{% endif %}>{{ category.1 }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+
+        <button type="submit">Apply</button>
+        <a href="." style="margin-left: 10px;">Clear</a>
+    </form>
+</div>
+
+{{ block.super }}
+
+<style> .form-inline label { margin-right: 5px; } .form-inline select { margin-right: 15px; padding: 2px 5px; } .form-inline button { padding: 3px 10px; } </style>

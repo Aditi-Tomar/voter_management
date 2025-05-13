@@ -1,0 +1,21 @@
+<h1>Events</h1>
+<div>
+  <label>Filter by:</label>
+  <a href="{% url 'upcoming-events' %}">Upcoming</a> |
+  <a href="{% url 'past-events' %}">Past</a>
+  <form method="get" action="/events/category/">
+    <select name="category_id" onchange="this.form.submit()">
+      <option value="">Select Category</option>
+      {% for category in categories %}
+        <option value="{{ category.id }}">{{ category.name }}</option>
+      {% endfor %}
+    </select>
+  </form>
+</div>
+{% for event in events %}
+  <div class="event">
+    <h2>{{ event.title }}</h2>
+    <p>{{ event.short_description }}</p>
+    <a href="{% url 'event-detail' event.id %}">View Details</a>
+  </div>
+{% endfor %}
