@@ -12,8 +12,6 @@ class NewsAdmin(admin.ModelAdmin):
     list_filter = ('archived',)
     actions = ['archive_selected']
 
-
-
     def short_description_html(self, obj):
         return mark_safe(obj.description[:100] + '...')
     short_description_html.short_description = 'Description'
